@@ -1,0 +1,13 @@
+@ImageStorageApi_HostAddress = http://localhost:5184
+
+### Obter todas as imagens
+GET {{ImageStorageApi_HostAddress}}/api/images
+Accept: application/json
+
+###
+
+### Obter imagem pelo ID
+GET {{ImageStorageApi_HostAddress}}/api/images/{id}
+Accept: application/json
+
+###
