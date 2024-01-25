@@ -44,14 +44,14 @@ Você pode testar as APIs usando os seguintes comandos cURL:
 
 ### Listar Imagens
 ```
-curl --location 'https://localhost:7299/api/Images' \
+curl --location 'http://localhost:5184/api/Images' \
 --header 'accept: application/json' \
 --header 'Authorization: Bearer {token gerado em jwt.io}'
 ```
 
 ### Obter Imagem por ID
 ```
-curl --location 'https://localhost:7299/api/Images/1' \
+curl --location 'http://localhost:5184/api/Images/1' \
 --header 'accept: application/json' \
 --header 'Authorization: Bearer {token gerado em jwt.io}'
 ```
