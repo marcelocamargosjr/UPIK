@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Image Gallery Project
 
-## Getting Started
+## Descrição
+Este é o repositório do projeto Image Gallery, uma aplicação web desenvolvida em Next.js para gerenciar e exibir uma galeria de imagens. O projeto utiliza React e outras tecnologias modernas para oferecer uma experiência de usuário rica e responsiva.
 
-First, run the development server:
+## Tecnologias Utilizadas
+- **Next.js (14.1.0):** Framework React para produção.
+- **React (18):** Biblioteca JavaScript para construção de interfaces de usuário.
+- **Tailwind CSS (3.3.0):** Framework CSS para design rápido e responsivo.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Estrutura do Projeto
+- `public`: Contém os arquivos estáticos utilizados no projeto.
+- `src`: Contém o código fonte da aplicação.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pré-requisitos
+- Node.js (recomenda-se a última versão estável)
+- npm (gerenciador de pacotes)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Instalação
+Siga estas instruções para configurar o ambiente de desenvolvimento.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone o repositório:
 
-## Learn More
+    ```bash
+    git clone https://github.com/marcelocamargosjr/UPIK.git
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Acesse o diretório do projeto:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    cd image-gallery
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Instale as dependências do projeto:
 
-## Deploy on Vercel
+    ```bash
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Uso
+Para rodar a aplicação localmente, siga os passos abaixo:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Inicie o servidor de desenvolvimento:
+
+    ```bash
+    npm run dev
+    ```
+
+2. Acesse `http://localhost:3001` no seu navegador. (Nota: a porta `3000` não deve ser utilizada, conforme instrução abaixo).
+
+## Configuração de Portas
+**Importante:** Ao executar este projeto juntamente com as APIs, não utilize a porta `3000` para o projeto front-end, pois esta porta é reservada para a API 'likes-management-api'. Utilize a porta `3001` ou outra que esteja disponível. O uso da porta `3000` pode causar conflitos durante a execução.
