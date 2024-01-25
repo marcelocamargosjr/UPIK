@@ -8,7 +8,7 @@ public class InMemoryImageRepository : IImageRepository
 
     public InMemoryImageRepository()
     {
-        for (var i = 1; i <= 10; i++) _images.Add(new Image { Id = i, Url = $"https://placehold.co/600x400?text=Image+{i}" });
+        for (var i = 1; i <= 10; i++) _images.Add(new Image { Id = i, Url = $"https://placehold.co/400x400.png?text=Image+{i}" });
     }
 
     public IEnumerable<Image> GetAllImages()

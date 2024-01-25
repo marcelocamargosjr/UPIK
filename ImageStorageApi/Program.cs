@@ -31,6 +31,12 @@ builder.Services.AddControllers();
 // Register IImageRepository
 builder.Services.AddSingleton<IImageRepository, InMemoryImageRepository>();
 
+// Add Cors
+builder.Services.AddCors(o => o.AddPolicy("MyPolicy", corsPolicyBuilder =>
+{
+    corsPolicyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+}));
+
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -47,6 +53,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+
+// Enable Cors with the policy
+app.UseCors("MyPolicy");
+
 app.UseAuthentication();
 app.UseAuthorization();
 
