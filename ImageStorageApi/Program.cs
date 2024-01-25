@@ -1,22 +1,22 @@
-using System.Security.Cryptography;
 using ImageStorageApi.Middlewares;
 using ImageStorageApi.Repositories;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
+using JWT.Extensions.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add JWT authentication
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+builder.Services.AddAuthentication(options =>
     {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(SHA256.HashData("upikrules"u8.ToArray())),
-            ValidateIssuer = false,
-            ValidateAudience = false
-        };
+        options.DefaultAuthenticateScheme = JwtAuthenticationDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtAuthenticationDefaults.AuthenticationScheme;
+    })
+    .AddJwt(options =>
+    {
+        // secrets, required only for symmetric algorithms, such as HMACSHA256Algorithm
+        options.Keys = ["upikrules"];
+
+        // optionally; disable throwing an exception if JWT signature is invalid
+        options.VerifySignature = false;
     });
 
 // Add authorization
